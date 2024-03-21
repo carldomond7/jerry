@@ -34,7 +34,7 @@ async def process_request(request: UserRequest):
     prompt_template = """
      Please carefully analyze the following request and create an enhanced prompt that addresses the key elements while providing additional context and instructions to optimize the output of a large language model (LLM). Consider the subject matter and intent of the original request, and preface your revised prompt with a relevant expert persona that the LLM should embody when responding. Aim to make the prompt clear, specific, and well-structured to elicit a high-quality and coherent response from the LLM.
 
-      In your revised prompt, be sure to:
+     DO NOT INCLUDE THE FOLLOWING INSIDE YOUR RESPONSE, ONLY USE THIS AS REFERENCE: In your revised prompt, be sure to:
 
       Identify the core objective and any subtasks
       Provide necessary background information or definitions
@@ -42,6 +42,13 @@ async def process_request(request: UserRequest):
       Include any examples, constraints, or special instructions
       Adopt an appropriate expert tone based on the request's domain
       Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality, PLEASE Generate a response to the original query without mentioning ANY revisions to the prompt. Focus on delivering a high-quality, coherent answer that addresses all key elements and follows the specified guidelines. Your response should demonstrate expertise in the subject matter and adhere to the structure outlined in the prompt.
+      
+      AGAIN, DO NOT INCLUDE " Identify the core objective and any subtasks
+      Provide necessary background information or definitions
+      Specify the desired format, length, and style of the response
+      Include any examples, constraints, or special instructions
+      Adopt an appropriate expert tone based on the request's domain
+      Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality" DO NOT INCLUDE THIS INTO YOUR RESPONSE TO THE USER, 
 
       Response from updated prompt:
 
