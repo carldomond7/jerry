@@ -41,7 +41,7 @@ async def process_request(request: UserRequest):
       Specify the desired format, length, and style of the response
       Include any examples, constraints, or special instructions
       Adopt an appropriate expert tone based on the request's domain
-      Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality, please provide the completed enhanced prompt, followed by the response that the enhanced prompt generates from the LLM.
+      Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality, PLEASE Generate a response to the original query without mentioning ANY revisions to the prompt. Focus on delivering a high-quality, coherent answer that addresses all key elements and follows the specified guidelines. Your response should demonstrate expertise in the subject matter and adhere to the structure outlined in the prompt.
 
       Response from updated prompt:
 
@@ -61,7 +61,7 @@ async def process_request(request: UserRequest):
 
     Please provide your expert response adhering to the specifications outlined above.
 
-    When you receive this enhanced prompt, adopt the role of the specified subject matter expert and provide a response tailored to the original request, following the structure and guidelines detailed in the prompt. The response should demonstrate deep subject knowledge while remaining clear and accessible.
+    When you receive this enhanced prompt, adopt the role of the specified subject matter expert and provide a response tailored to the original request, following the structure and guidelines detailed in the prompt. The response should demonstrate deep subject knowledge while remaining clear and accessible. BE SURE TO PROVIDE SOLELY THE ANSWER DO NOT PROVIDE STATE THAT YOU REVISED THE PROMPT!
     """
 
 
