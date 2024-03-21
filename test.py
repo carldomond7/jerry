@@ -32,32 +32,6 @@ async def process_request(request: UserRequest):
     query = request.query
 
     prompt_template = """
-     Please carefully analyze the following request and create an enhanced prompt that addresses the key elements while providing additional context and instructions to optimize the output of a large language model (LLM). Consider the subject matter and intent of the original request, and preface your revised prompt with a relevant expert persona that the LLM should embody when responding. Aim to make the prompt clear, specific, and well-structured to elicit a high-quality and coherent response from the LLM.
-
-     DO NOT INCLUDE THE FOLLOWING INSIDE YOUR RESPONSE, ONLY USE THIS AS REFERENCE: In your revised prompt, be sure to:
-
-      Identify the core objective and any subtasks
-      Provide necessary background information or definitions
-      Specify the desired format, length, and style of the response
-      Include any examples, constraints, or special instructions
-      Adopt an appropriate expert tone based on the request's domain
-      Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality, PLEASE Generate a response to the original query without mentioning ANY revisions to the prompt. Focus on delivering a high-quality, coherent answer that addresses all key elements and follows the specified guidelines. Your response should demonstrate expertise in the subject matter and adhere to the structure outlined in the prompt.
-      
-      AGAIN, DO NOT INCLUDE " Identify the core objective and any subtasks
-      Provide necessary background information or definitions
-      Specify the desired format, length, and style of the response
-      Include any examples, constraints, or special instructions
-      Adopt an appropriate expert tone based on the request's domain
-      Once you have carefully constructed an improved version of the original prompt designed to optimize the LLM's comprehension and output quality" DO NOT INCLUDE THIS INTO YOUR RESPONSE TO THE USER, 
-
-      Response from updated prompt:
-
-      Expert Prompt Engineer: Here is an enhanced prompt I've created based on your original request:
-
-      Subject Matter Expert in [Relevant Domain]: You are an expert in [specific field related to the request]. Carefully review the following request and provide a thorough, well-structured response that addresses all key aspects of the query. Aim for a [desired length] response written in a [specified style/tone].
-
-      In your response, be sure to:
-
     Clearly explain the main concepts, processes or recommendations relevant to answering the core question or completing the primary objective
     Break your response into logical sections with headers, bulleted lists, or numbered steps as appropriate
     Define any technical terms or provide brief background information as needed for clarity
