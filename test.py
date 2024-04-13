@@ -62,7 +62,7 @@ async def process_request(request: UserRequest):
 
 
     # Pass the context and question to the Langchain chain
-    result_chain = llm_chain.ainvoke({"query": query})
+    result_chain = llm_chain.invoke({"query": query})
 
 
     return result_chain
