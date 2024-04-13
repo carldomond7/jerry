@@ -26,7 +26,10 @@ async def root():
 
 @app.post("/route/")
 async def process_request(request: UserRequest):
-    llm = ChatGroq(groq_api_key=groq_api_key, model_name='mixtral-8x7b-32768')
+    llm = ChatGroq(
+        groq_api_key=groq_api_key, 
+        model_name='mixtral-8x7b-32768',
+        streaming=True)
 
 
     query = request.query
@@ -59,7 +62,7 @@ async def process_request(request: UserRequest):
 
 
     # Pass the context and question to the Langchain chain
-    result_chain = llm_chain.invoke({"query": query})
+    result_chain = llm_chain.ainvoke({"query": query})
 
 
     return result_chain
